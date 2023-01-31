@@ -18,3 +18,4 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     uses: mondo192/semantic-release-action/.github/workflows/main.yml@v1.0.1
+    secrets: inherit
