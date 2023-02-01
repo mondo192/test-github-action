@@ -18,5 +18,5 @@ jobs:
         run: echo $PATH
         shell: bash 
       - name: GitHub event 
-        run: echo ' GitHub event ${{ github.event }}'
+        run: echo ' GitHub event ${{ github.event.workflow_run }}'
 
