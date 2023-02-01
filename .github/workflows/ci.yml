@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
       - name: Display the path
         run: echo $PATH
         shell: bash 
