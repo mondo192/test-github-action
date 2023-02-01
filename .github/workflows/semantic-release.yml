@@ -1,4 +1,6 @@
 on:
+  pull_request:
+    
   workflow_run:
     workflows: ["CI"]
     types: [completed]
