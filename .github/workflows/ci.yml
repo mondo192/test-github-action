@@ -10,7 +10,7 @@ on:
       - synchronize
   workflow_dispatch:
 jobs:
-  ci:
+  ci-test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
