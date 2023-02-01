@@ -1,15 +1,9 @@
 name: CI
 on:
   push:
-    branches:
-      - main
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
 jobs:
-  ci-test:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -17,6 +11,4 @@ jobs:
       - name: Display the path
         run: echo $PATH
         shell: bash 
-      - name: GitHub event 
-        run: echo ' GitHub event ${{ github.event.workflow_run }}'
 
