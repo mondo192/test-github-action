@@ -1,20 +1,17 @@
-name: semantic-release
 on:
-  push:
-    branches:
-     - main
-  pull_request:
   workflow_run:
-    workflows: [CI]
+    workflows: [Build]
     types: [completed]
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  main:
+  on-success:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Check conslusion
-        run: echo ${{ github.event.workflow_run.conslusion }}
-  # This workflow contains a single job called "build"
-  semantic-release:
-    uses: mondo192/semantic-release-action/.github/workflows/main.yml@v1.0.0
-    secrets: inherit
+      - run: echo 'The triggering workflow passed'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
+
