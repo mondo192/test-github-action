@@ -1,22 +1,19 @@
-# This is a basic workflow to help you get started with Actions
-
 name: semantic-release
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches:
      - main
   pull_request:
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_run:
     workflows: [CI]
     types: [completed]
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check conslusion
+        run: echo ${{ github.event.workflow_run.conslusion }}
   # This workflow contains a single job called "build"
   semantic-release:
     uses: mondo192/semantic-release-action/.github/workflows/main.yml@v1.0.0
