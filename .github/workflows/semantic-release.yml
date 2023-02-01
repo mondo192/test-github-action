@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: [ci-test]
+    workflows: ["CI"]
     types: [completed]
 
 jobs:
