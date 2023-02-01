@@ -17,6 +17,6 @@ jobs:
       - name: Display the path
         run: echo $PATH
         shell: bash 
-      - name: GitHub context
-        run: echo ' GitHub context ${{ github.context }}'
+      - name: GitHub event 
+        run: echo ' GitHub event ${{ github.event }}'
 
