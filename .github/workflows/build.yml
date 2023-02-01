@@ -1,16 +1,9 @@
-name: CI
+name: Build
 on:
   push:
-    branches:
-      - main
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-  workflow_dispatch:
 jobs:
-  ci-test:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -18,3 +11,4 @@ jobs:
       - name: Display the path
         run: echo $PATH
         shell: bash 
+
