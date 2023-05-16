@@ -1,1 +1,1 @@
-# test-semantic-release-action
+# test-github-action
